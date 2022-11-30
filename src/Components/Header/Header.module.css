@@ -1,0 +1,65 @@
+.header {
+  padding: 15px 0;
+  background-color: var(--header-bg);
+}
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo__block {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo__block_pomodoro {
+  margin-right: 12px;
+}
+.logo__block_text {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--pomodoro-red);
+}
+
+.right__block {
+  display: flex;
+  align-items: center;
+}
+
+.statistic {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 17px;
+  margin-right: 15px;
+  color: var(--pomodoro-red);
+}
+.statistic_text {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: color 0.2s ease;
+}
+.statistic_text::after {
+  transition: width 0.2s ease;
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: var(--statistic-hover);
+}
+.statistic:hover .statistic_text {
+  color: var(--statistic-hover);
+}
+.statistic:hover .statistic_text::after {
+  width: 100%;
+}
+.statistic:hover svg path {
+  transition: fill 0.2s ease;
+  fill: var(--statistic-hover);
+}
+
+/*# sourceMappingURL=Header.module.css.map */

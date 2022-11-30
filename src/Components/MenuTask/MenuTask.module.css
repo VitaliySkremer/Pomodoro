@@ -1,0 +1,30 @@
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu__list li:hover button {
+  background-color: var(--task-main-bg);
+}
+
+.button {
+  color: var(--border-task);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 100%;
+  padding: 9px 15px 9px 15px;
+  cursor: pointer;
+}
+.button svg {
+  margin-right: 9px;
+}
+.button:disabled {
+  cursor: default;
+}
+.button:disabled svg path {
+  fill: #C4C4C4;
+}
+
+/*# sourceMappingURL=MenuTask.module.css.map */

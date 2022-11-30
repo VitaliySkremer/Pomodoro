@@ -1,0 +1,14 @@
+.wrapper {
+  max-width: 733px;
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--task-main-bg);
+  height: 507px;
+}
+
+.not_task {
+  align-self: center;
+}

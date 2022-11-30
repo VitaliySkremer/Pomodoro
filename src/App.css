@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "SFUIDisplay";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/SFUIDisplay-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SFUIDisplay";
+  font-weight: 200;
+  src: url("../public/fonts/SFUIDisplay-Ultralight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SFUIDisplay";
+  font-weight: 300;
+  src: url("../public/fonts/SFUIDisplay-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SFUIDisplay";
+  font-weight: 500;
+  src: url("../public/fonts/SFUIDisplay-Medium.woff2") format("woff2");
+}
+html {
+  --pomodoro-red: #DC3E22;
+  --timer-heade-bg: #999999;
+  --timer-main-bg: #E5E5E5;
+  --btn-disabled: #C4C4C4;
+  --statistic-hover: #B7280F;
+}
+
+html[data-theme=light] {
+  --main-color: #333333;
+  --header-bg: #FFFFFF;
+  --main-bg: #F4F4F4;
+  --btn-bg: #A8B64F;
+  --btn-hover: #899441;
+  --input-bg: #E5E5E5;
+  --input-color: #333333;
+  --input-placeholder: #999999;
+  --task-header-bg: #C4C4C4;
+  --task-main-bg: #E5E5E5;
+  --button-add-bg-hover: #899441;
+  --border-task: #999999;
+  --dropDown-bg: #FFF;
+  --all-time-color: #999999;
+}
+
+html[data-theme=dark] {
+  --main-color: white;
+  --header-bg: #000;
+  --main-bg: #18181a;
+  --btn-bg: #2e24ff;
+  --btn-hover: #1207ff;
+  --input-bg: #333333;
+  --input-color: white;
+  --input-placeholder: #999999;
+  --task-header-bg: #000;
+  --task-main-bg: #333333;
+  --button-add-bg-hover: var(--pomodoro-red);
+  --border-task: #E4E4E4;
+  --dropDown-bg: #000;
+  --all-time-color: var(--pomodoro-red) ;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "SFUIDisplay", sans-serif, "Segoe UI";
+  font-weight: 400;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 100px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=App.css.map */

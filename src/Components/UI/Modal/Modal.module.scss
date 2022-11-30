@@ -1,0 +1,32 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background-color: rgba(0,0,0, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ align-items: center;
+
+  opacity: 0;
+  transition: opacity .2s ease;
+  &_created{
+    opacity: 1;
+  }
+
+  &_body {
+    background-color: var(--main-bg);
+    min-height: 150px;
+    min-width: 350px;
+
+    transform: scale(0);
+    transition: transform .2s ease;
+
+    &_created{
+      transform: none;
+    }
+  }
+}

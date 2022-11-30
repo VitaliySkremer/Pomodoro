@@ -1,0 +1,36 @@
+.button__light {
+  background-color: var(--btn-bg);
+  color: var(--main-color);
+  border: none;
+  padding: 19px 50px;
+  &:hover{
+    background-color: var(--btn-hover);
+  }
+}
+
+.button__red {
+  background-color: transparent;
+  border: 2px solid var(--pomodoro-red);
+  color: var(--pomodoro-red);
+  padding: 17px 50px;
+  &:hover {
+    background-color: var(--pomodoro-red);
+    color: white;
+  }
+}
+
+.button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .2s ease;
+  &:disabled {
+    cursor: default;
+    padding: 17px 50px;
+    background-color: transparent;
+    color: var(--btn-disabled);
+    border: 2px solid var(--btn-disabled);
+  }
+}

@@ -1,0 +1,25 @@
+.list {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 30px;
+  padding-top: 5px;
+  transform: translateX(-50%);
+  background-color: var(--main-bg);
+  border: 1px solid #C4C4C4;
+  &::after, &::before {
+    content: "";
+    display: block;
+    border: 5px solid transparent;
+    border-bottom-color: #C4C4C4;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    border-bottom: 5px solid var(--main-bg);
+    top: -8px;
+  }
+}

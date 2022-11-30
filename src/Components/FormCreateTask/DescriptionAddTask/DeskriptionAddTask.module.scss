@@ -1,0 +1,26 @@
+.wrapper {
+  margin-bottom: 25px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--main-color);
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+
+  li {
+    font-size: 16px;
+    line-height: 33px;
+    color: var(--main-color);
+  }
+  li::marker {
+    color: var(--pomodoro-red);
+  }
+}

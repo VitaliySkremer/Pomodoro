@@ -1,0 +1,26 @@
+.list {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 30px;
+  padding-top: 5px;
+  transform: translateX(-50%);
+  background-color: var(--main-bg);
+  border: 1px solid #C4C4C4;
+}
+.list::after, .list::before {
+  content: "";
+  display: block;
+  border: 5px solid transparent;
+  border-bottom-color: #C4C4C4;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.list::after {
+  border-bottom: 5px solid var(--main-bg);
+  top: -8px;
+}
+
+/*# sourceMappingURL=DropDownMenu.module.css.map */

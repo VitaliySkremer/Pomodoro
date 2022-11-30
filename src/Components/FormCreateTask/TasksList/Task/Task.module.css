@@ -1,0 +1,53 @@
+.item {
+  padding: 15px 0;
+  border-top: 1px solid var(--border-task);
+  border-bottom: 1px solid var(--border-task);
+  display: flex;
+  align-items: center;
+  transform: translateX(-1000px);
+  transition: transform 0.2s ease;
+}
+.item_pomodor {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  margin: 0 10px 0 0;
+  border: 1px solid var(--border-task);
+}
+.item_created {
+  transform: none;
+}
+.item_inputName {
+  border: none;
+  background-color: var(--input-bg);
+  padding: 5px;
+  outline: none;
+  box-sizing: border-box;
+  color: var(--input-color);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+  margin: 0 auto 0 -5px;
+}
+.item_inputName::placeholder {
+  color: var(--input-placeholder);
+}
+.item_name {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+  margin: 0 auto 0 0;
+}
+.item_menu {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+}
+.item:not(:first-child) {
+  margin-top: -1px;
+}
+
+/*# sourceMappingURL=Task.module.css.map */

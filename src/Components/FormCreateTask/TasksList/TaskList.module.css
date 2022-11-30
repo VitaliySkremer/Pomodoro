@@ -1,0 +1,10 @@
+.task__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 370px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 19px;
+}
+
+/*# sourceMappingURL=TaskList.module.css.map */
