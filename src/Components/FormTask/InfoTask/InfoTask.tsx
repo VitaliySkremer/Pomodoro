@@ -55,6 +55,11 @@ export const InfoTask = ({task}:InfoTaskProps) => {
           setIsComplete(true)
           playSound();
         }
+        if(timeTick === 0){
+          setPomodoro(prevState => prevState + 1)
+          resetTimer();
+          endTask();
+        }
       }, 1000)
     }else if(!isActive || isPause){
       clearInterval(interval);

@@ -18,10 +18,23 @@
   }
 
   &_text {
+    display: flex;
+    flex-direction: column;
     font-weight: 300;
     font-size: 24px;
     line-height: 24px;
     color: var(--pomodoro-red);
+  }
+  &_text::after {
+    transition: width .2s ease;
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: var(--pomodoro-red);
+  }
+
+  &:hover &_text::after {
+    width: 100%;
   }
 }
 

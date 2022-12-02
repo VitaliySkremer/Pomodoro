@@ -33,15 +33,17 @@ html[data-theme=light] {
   --main-bg: #F4F4F4;
   --btn-bg: #A8B64F;
   --btn-hover: #899441;
-  --input-bg: #E5E5E5;
+  --input-bg: #E4E4E4;
   --input-color: #333333;
   --input-placeholder: #999999;
   --task-header-bg: #C4C4C4;
-  --task-main-bg: #E5E5E5;
+  --task-main-bg: #E4E4E4;
   --button-add-bg-hover: #899441;
   --border-task: #999999;
   --dropDown-bg: #FFF;
   --all-time-color: #999999;
+  --select-bg: #E4E4E4;
+  --select-bg-hover: #C4C4C4;
 }
 
 html[data-theme=dark] {
@@ -58,7 +60,9 @@ html[data-theme=dark] {
   --button-add-bg-hover: var(--pomodoro-red);
   --border-task: #E4E4E4;
   --dropDown-bg: #000;
-  --all-time-color: var(--pomodoro-red) ;
+  --all-time-color: var(--pomodoro-red);
+  --select-bg: #333333;
+  --select-bg-hover: #232323;
 }
 
 body {
@@ -74,6 +78,12 @@ body {
   max-width: 1280px;
   padding: 0 100px;
   margin: 0 auto;
+}
+
+.app {
+  display: flex;
+  padding-top: 100px;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -5,6 +5,7 @@ import {EditIcon} from "./IconsComponents/EditIcon";
 import {DeleteIcon} from "./IconsComponents/DeleteIcon";
 import {StatisticIcon} from "./IconsComponents/StatisticIcon";
 import {TomatoIcon} from "./IconsComponents/TomatoIcon";
+import {SelectIcon} from "./IconsComponents/SelectIcon";
 
 interface IIconsProps {
   icon: IconsList
@@ -19,5 +20,6 @@ export const Icons = ({icon}:IIconsProps) => {
     case IconsList.DeleteIcon: return <DeleteIcon/>
     case IconsList.StatisticIcon: return <StatisticIcon/>
     case IconsList.TomatoIcon: return <TomatoIcon/>
+    case IconsList.SelectIcon: return <SelectIcon/>
   }
 }

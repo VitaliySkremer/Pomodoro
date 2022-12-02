@@ -20,6 +20,6 @@ export const initialState: RootState = {
   time: {
     timeTick: 1500, //1500
     timeLongPause: 1200,
-    timeShortPause: 300
+    timeShortPause: 300,
   }
 }

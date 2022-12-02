@@ -1,9 +1,12 @@
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 import styles from './Main.module.scss'
-export const Main = ({children}:{children: ReactNode}) => {
+import {FormCreateTask} from "../FormCreateTask/FormCreateTask";
+import {FormTask} from "../FormTask/FormTask";
+export const Main = () => {
   return (
-    <main className={[styles.main, 'container'].join(' ')}>
-      {children}
-    </main>
+    <div className={styles.main}>
+      <FormCreateTask/>
+      <FormTask/>
+    </div>
   )
 }

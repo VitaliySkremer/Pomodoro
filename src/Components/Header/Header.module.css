@@ -17,10 +17,22 @@
   margin-right: 12px;
 }
 .logo__block_text {
+  display: flex;
+  flex-direction: column;
   font-weight: 300;
   font-size: 24px;
   line-height: 24px;
   color: var(--pomodoro-red);
+}
+.logo__block_text::after {
+  transition: width 0.2s ease;
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: var(--pomodoro-red);
+}
+.logo__block:hover .logo__block_text::after {
+  width: 100%;
 }
 
 .right__block {
