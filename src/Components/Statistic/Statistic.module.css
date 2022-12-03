@@ -4,25 +4,24 @@
   padding: 88px 0;
 }
 
-.statistic__main {
-  min-height: 471px;
-  margin-bottom: 32px;
-  display: flex;
+.statistic__wrapper {
+  display: grid;
+  grid-template-rows: 471px 179px;
+  gap: 32px;
 }
-.statistic__main_counter {
-  max-width: 296px;
-  margin-right: 32px;
+
+.statistic__main {
+  display: grid;
+  gap: 32px;
+  grid-template-rows: 260px 180px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "byDay statisticGraph statisticGraph statisticGraph" "countPomodoro statisticGraph statisticGraph statisticGraph";
 }
 
 .statistic__bottom {
-  display: flex;
-}
-.statistic__bottom_block {
-  height: 179px;
-  width: 405px;
-}
-.statistic__bottom_block:not(:last-child) {
-  margin-right: 32px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /*# sourceMappingURL=Statistic.module.css.map */

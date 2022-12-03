@@ -1,6 +1,6 @@
 .wrapper {
   background-color: var(--task-main-bg);
-  height: 179px;
+  grid-area: countPomodoro;
 }
 .wrapper_empty {
   display: flex;

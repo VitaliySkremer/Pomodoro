@@ -1,7 +1,6 @@
 .wrapper {
   background-color: var(--task-main-bg);
-  height: 179px;
-
+  grid-area: countPomodoro;
   &_empty {
     display: flex;
     flex-direction: column;

@@ -6,6 +6,7 @@ import {StatisticPomodoroCount} from "./StatisticPomodoroCount/StatisticPomodoro
 import {StatisticFocus} from "./StatisticFocuse/StatisticFocus";
 import {StatisticPause} from "./StatisticPause/StatisticPause";
 import {StatisticStop} from "./StatisticStop/StatisticStop";
+import {StatisticGraph} from "./StatisticGraph/StatisticGraph";
 export const Statistic = () => {
   const [isChoose, setIsChoose] = useState('Эта неделя')
   const [selectList] = useState(()=> ['Эта неделя','Прошедшая неделя','2 недели назад'])
@@ -13,23 +14,15 @@ export const Statistic = () => {
   return (
     <div className={styles.container}>
       <StatisticSelect choose={isChoose} setIsChoose={setIsChoose} list={selectList}/>
-      <div className={styles.statistic__main}>
-        <div className={styles.statistic__main_counter}>
-          <StatisticByDay/>
-          <StatisticPomodoroCount/>
+      <div className={styles.statistic__wrapper}>
+        <div className={styles.statistic__main}>
+            <StatisticByDay/>
+            <StatisticPomodoroCount/>
+            <StatisticGraph/>
         </div>
-        <div>
-
-        </div>
-      </div>
-      <div className={styles.statistic__bottom}>
-        <div className={styles.statistic__bottom_block}>
+        <div className={styles.statistic__bottom}>
           <StatisticFocus/>
-        </div>
-        <div className={styles.statistic__bottom_block}>
           <StatisticPause/>
-        </div>
-        <div className={styles.statistic__bottom_block}>
           <StatisticStop/>
         </div>
       </div>

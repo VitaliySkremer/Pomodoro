@@ -1,10 +1,9 @@
 .wrapper {
+  grid-area: byDay;
   padding: 25px;
-  height: 260px;
   color: var(--main-color);
   background-color: var(--task-main-bg);
   box-sizing: border-box;
-  margin-bottom: 32px;
 }
 .wrapper_title {
   font-size: 24px;
