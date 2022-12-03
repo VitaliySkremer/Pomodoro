@@ -1,0 +1,24 @@
+.wrapper {
+  padding: 25px;
+  height: 260px;
+  color: var(--main-color);
+  background-color: var(--task-main-bg);
+  box-sizing: border-box;
+  margin-bottom: 32px;
+}
+.wrapper_title {
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0 0 14px;
+}
+.wrapper_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0;
+}
+.wrapper_text_counter {
+  color: var(--pomodoro-red);
+}
+
+/*# sourceMappingURL=StaitsticByDay.module.css.map */

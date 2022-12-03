@@ -1,0 +1,29 @@
+.stop {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: var(--stop-bg);
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  justify-content: space-between;
+  color: var(--statistic-color-bottom);
+}
+.stop_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.stop_block_text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+}
+.stop_block_number {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 76px;
+}
+
+/*# sourceMappingURL=StatisticStop.module.css.map */

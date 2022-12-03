@@ -1,0 +1,29 @@
+.pause {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pause-bg);
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  justify-content: space-between;
+  color: var(--statistic-color-bottom);
+}
+.pause_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.pause_block_text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+}
+.pause_block_number {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 76px;
+}
+
+/*# sourceMappingURL=StatisticPause.module.css.map */

@@ -1,0 +1,42 @@
+.wrapper {
+  background-color: var(--task-main-bg);
+  height: 179px;
+}
+.wrapper_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.wrapper_full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.wrapper_full_counter {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.wrapper_full_counter_text {
+  margin-left: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--all-time-color);
+}
+.wrapper_full_counter_bottom {
+  margin: 0;
+  text-align: center;
+  padding: 9px 0;
+  width: 100%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  background-color: var(--pomodoro-red);
+  color: white;
+}
+
+/*# sourceMappingURL=StatisticPomodoroCount.module.css.map */

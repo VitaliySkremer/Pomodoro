@@ -4,4 +4,25 @@
   padding: 88px 0;
 }
 
+.statistic__main {
+  min-height: 471px;
+  margin-bottom: 32px;
+  display: flex;
+}
+.statistic__main_counter {
+  max-width: 296px;
+  margin-right: 32px;
+}
+
+.statistic__bottom {
+  display: flex;
+}
+.statistic__bottom_block {
+  height: 179px;
+  width: 405px;
+}
+.statistic__bottom_block:not(:last-child) {
+  margin-right: 32px;
+}
+
 /*# sourceMappingURL=Statistic.module.css.map */
