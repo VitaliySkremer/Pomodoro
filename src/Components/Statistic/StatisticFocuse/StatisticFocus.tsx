@@ -7,7 +7,7 @@ export const StatisticFocus = () => {
     <div className={styles.focus}>
       <div className={styles.focus_block}>
         <span className={styles.focus_block_text}>Фокус</span>
-        <span className={styles.focus_block_number}>35 %</span>
+        <span className={styles.focus_block_number}>35%</span>
       </div>
       <Icons icon={IconsList.FocusIcon}/>
     </div>

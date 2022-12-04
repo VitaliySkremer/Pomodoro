@@ -1,0 +1,14 @@
+.graph {
+  transition: height 1s ease;
+  background-color: #999999;
+}
+
+.graph__full {
+  transition: height 1s ease;
+  background-color: var(--graph);
+}
+
+.graph__active {
+  transition: background-color .2s ease;
+  background-color: var(--pomodoro-red);
+}

@@ -33,6 +33,7 @@ html {
   --focus-bg: #FFDDA9;
   --pause-bg: #DFDCFE;
   --stop-bg: #C5F1FF;
+  --graph: #EA8A79;
 }
 
 html[data-theme='light']{
@@ -52,6 +53,8 @@ html[data-theme='light']{
   --all-time-color: #999999;
   --select-bg: #E4E4E4;
   --select-bg-hover: #C4C4C4;
+  --dividers: rgba(51, 51, 51, .2);
+  --control-panel-bg: #d4d4d4;
 }
 
 html[data-theme='dark']{
@@ -71,6 +74,8 @@ html[data-theme='dark']{
   --all-time-color: var(--pomodoro-red);
   --select-bg: #333333;
   --select-bg-hover: #232323;
+  --dividers: #18181a;
+  --control-panel-bg: #232323;
 }
 
 body {
