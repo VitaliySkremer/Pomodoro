@@ -1,16 +1,47 @@
+.label {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+}
+.label_text {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 51px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #999999;
+}
+.label input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+input[type=radio]:checked + .graph + .label_text {
+  color: var(--pomodoro-red);
+}
+.label input[type=radio]:checked + .graph {
+  transition: background-color 0.2s ease;
+  background-color: var(--pomodoro-red);
+}
+
 .graph {
   transition: height 1s ease;
   background-color: #999999;
 }
 
-.graph__full {
-  transition: height 1s ease;
-  background-color: var(--graph);
+.graph:hover {
+  background-color: var(--graph-hover);
 }
 
-.graph__active {
-  transition: background-color 0.2s ease;
-  background-color: var(--pomodoro-red);
+.graph__full {
+  background-color: var(--graph);
 }
 
 /*# sourceMappingURL=Graph.module.css.map */

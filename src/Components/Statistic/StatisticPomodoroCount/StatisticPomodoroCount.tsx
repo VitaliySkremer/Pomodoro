@@ -1,12 +1,17 @@
 import styles from './StatisticPomodoroCount.module.scss'
 import {Icons} from "../../UI/Icons/Icons";
 import {IconsList} from "../../UI/Icons/IconsList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export const StatisticPomodoroCount = () => {
   const [count] = useState(3)
+
+  const [isActive, setIsActive] = useState(false);
+  useEffect(()=>{
+    setIsActive(true)
+  })
   return (
-    <div className={styles.wrapper}>
+    <div className={[styles.wrapper, isActive?styles.wrapper_active:''].join(' ')}>
       {count===0
         ? <div className={styles.wrapper_empty}>
             <Icons icon={IconsList.TomatoIcon}/>

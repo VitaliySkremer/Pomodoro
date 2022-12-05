@@ -1,6 +1,8 @@
 .wrapper {
   background-color: var(--task-main-bg);
   grid-area: countPomodoro;
+  transition: opacity 1s ease;
+  opacity: 0;
 }
 .wrapper_empty {
   display: flex;
@@ -37,6 +39,9 @@
   line-height: 33px;
   background-color: var(--pomodoro-red);
   color: white;
+}
+.wrapper_active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=StatisticPomodoroCount.module.css.map */

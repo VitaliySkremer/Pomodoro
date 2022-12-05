@@ -1,6 +1,8 @@
 .wrapper {
   background-color: var(--task-main-bg);
   grid-area: countPomodoro;
+  transition: opacity 1s ease;
+  opacity: 0;
   &_empty {
     display: flex;
     flex-direction: column;
@@ -37,5 +39,8 @@
       background-color: var(--pomodoro-red);
       color: white;
     }
+  }
+  &_active {
+    opacity: 1;
   }
 }

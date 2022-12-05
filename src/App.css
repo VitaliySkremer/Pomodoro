@@ -30,6 +30,7 @@ html {
   --pause-bg: #DFDCFE;
   --stop-bg: #C5F1FF;
   --graph: #EA8A79;
+  --graph-hover: #EE735D;
 }
 
 html[data-theme=light] {

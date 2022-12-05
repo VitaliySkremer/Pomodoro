@@ -17,19 +17,14 @@ const weekDay = [DayWeek.Monday,DayWeek.Tuesday, DayWeek.Wednesday, DayWeek.Thur
 const arrTimeDay = [
   {day:DayWeek.Monday, value: 1500},
   {day:DayWeek.Tuesday, value: 1000},
-  {day:DayWeek.Wednesday, value: 2346},
+  {day:DayWeek.Wednesday, value: 10000},
   {day:DayWeek.Thursday, value: 1234},
   {day:DayWeek.Friday, value: 4345},
   {day:DayWeek.Saturday, value: 300},
-  {day:DayWeek.Sunday, value: 300}];
+  {day:DayWeek.Sunday, value: 0}];
 
 export const StatisticGraph = () => {
   const [radio, setRadio] = useState('');
-
-  const handleChange = (event: any) =>{
-    setRadio(event.target.value)
-  }
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.graph__block}>
@@ -43,25 +38,11 @@ export const StatisticGraph = () => {
         </ul>
         <div className={styles.graph}>
           {arrTimeDay.map((item, index)=>
-            <Graph key={index} time={item} radio={radio}/>
+            <Graph key={index} time={item} setRadio={setRadio} radio={radio}/>
           )}
         </div>
       </div>
-      <ul className={styles.control__panel}>
-        {weekDay.map(item=>
-          <li className={styles.control__panel_item} key={item}>
-            <label className={styles.label}>
-              <input
-                type="radio"
-                name="radio"
-                value={item}
-                onChange={handleChange}
-              />
-              <span className={styles.label_text}>{item}</span>
-            </label>
-          </li>
-        )}
-      </ul>
+      <div className={styles.control__panel}/>
     </div>
   )
 }
