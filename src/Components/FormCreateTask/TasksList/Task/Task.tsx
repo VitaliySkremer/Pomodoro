@@ -16,7 +16,6 @@ interface ITask {
 }
 
 export const Task = ({task}: ITask) => {
-  const [created, setCreated] = useState(false);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isEditOpened, setIsEditOpened] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -43,9 +42,6 @@ export const Task = ({task}: ITask) => {
     }
   }, [isEditOpened])
 
-  useEffect(() => {
-    setCreated(true);
-  }, []);
 
   const buttonMenu = (
     <svg className={styles.item_menu} width="26" height="6" viewBox="0 0 26 6" fill="none"
@@ -57,7 +53,7 @@ export const Task = ({task}: ITask) => {
   )
 
   return (
-    <li className={[styles.item, created ? styles.item_created : ''].join(' ')}>
+    <li className={styles.item}>
       <p className={styles.item_pomodor}>
         {task.countPomodoro}
       </p>

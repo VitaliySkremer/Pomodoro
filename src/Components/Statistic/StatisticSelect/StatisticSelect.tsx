@@ -1,10 +1,11 @@
 import styles from './StatisticSelect.module.scss'
 import {Select} from "../../UI/Select/Select";
+import {SelectList} from "../../../Store/initialState";
 
 interface IStatisticSelect {
-  choose: string,
-  list: Array<string>,
-  setIsChoose: (choose:string)=> void
+  choose: SelectList,
+  list: Array<SelectList>,
+  setIsChoose: (choose:SelectList)=> void
 }
 
 export const StatisticSelect = ({choose, list, setIsChoose}:IStatisticSelect) => {

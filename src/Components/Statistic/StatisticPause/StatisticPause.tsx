@@ -1,18 +1,22 @@
 import styles from "./StatisticPause.module.scss";
 import {Icons} from "../../UI/Icons/Icons";
 import {IconsList} from "../../UI/Icons/IconsList";
-import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../Store/initialState";
 
 export const StatisticPause = () => {
-  const [isActive, setIsActive] = useState(false);
-  useEffect(()=>{
-    setIsActive(true)
-  })
+  const pause = useSelector<RootState, number>(state => state.statistic.timePause)
+
+  const resultPause = () =>{
+    const minutes = Math.floor(pause / 60);
+    return `${minutes}м`
+  }
+
   return (
-    <div className={[styles.pause, isActive? styles.pause_active:''].join(' ')}>
+    <div className={styles.pause}>
       <div className={styles.pause_block}>
         <span className={styles.pause_block_text}>Время на паузе</span>
-        <span className={styles.pause_block_number}>9м</span>
+        <span className={styles.pause_block_number}>{resultPause()}</span>
       </div>
       <Icons icon={IconsList.PauseIcon}/>
     </div>

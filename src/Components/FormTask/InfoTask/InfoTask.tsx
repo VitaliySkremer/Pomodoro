@@ -4,7 +4,15 @@ import {ButtonCalc} from "../../UI/ButtonCalc/ButtonCalc";
 import {ITask, RootState} from "../../../Store/initialState";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addMinuteTick, deleteMinuteTick, taskDelete} from "../../../Store/rootReducer";
+import {
+  addAllPause,
+  addAllPomodoro,
+  addAllStop, addAllTime,
+  addMinuteTick,
+  deleteMinuteTick,
+  editPomodor,
+  taskDelete
+} from "../../../Store/rootReducer";
 import useSound from "use-sound";
 import boop from '../../../Sounds/bob.mp3';
 
@@ -18,7 +26,7 @@ export const InfoTask = ({task}:InfoTaskProps) => {
   const shortTick = useSelector<RootState,number>(state => state.time.timeShortPause)
   const longTick = useSelector<RootState,number>(state => state.time.timeLongPause)
   const dispatch = useDispatch<any>();
-  const [pomodoro, setPomodoro] = useState(1);
+  const pomodoro = useSelector<RootState, number>(state => state.time.pomodor)
   const [timeTick, setTimeTick] = useState(MainTime)
   const [isPause, setIsPause] = useState(true);
   const [isComplete, setIsComplete] = useState(false);
@@ -26,6 +34,16 @@ export const InfoTask = ({task}:InfoTaskProps) => {
   const togglePause = () => setIsPause(!isPause);
   const addMinute = () => dispatch(addMinuteTick());
   const minusMinute = () => dispatch(deleteMinuteTick());
+
+  const saveData = () =>{
+    const nowWeek = {
+      timer: 0,
+      countPomodoro: 0,
+      focus: 0,
+      timePause: 0,
+      stopCount: 0,
+    }
+  }
 
   const resetTimer = ()=>{
     setIsActive(false);
@@ -37,6 +55,7 @@ export const InfoTask = ({task}:InfoTaskProps) => {
   const endTask = ()=>{
     if(pomodoro===task.countPomodoro){
       dispatch(taskDelete(task.id));
+      dispatch(editPomodor(1));
     }
   }
 
@@ -48,7 +67,9 @@ export const InfoTask = ({task}:InfoTaskProps) => {
 
   useEffect(()=>{
     let interval: any = null;
+    let pauseInterval: any = null;
     if(isActive && !isPause){
+      clearInterval(pauseInterval);
       interval = setInterval(()=>{
         setTimeTick(prevState => prevState - 1)
         if(timeTick===shortTick) {
@@ -56,22 +77,31 @@ export const InfoTask = ({task}:InfoTaskProps) => {
           playSound();
         }
         if(timeTick === 0){
-          setPomodoro(prevState => prevState + 1)
+          dispatch(editPomodor(pomodoro + 1));
+          dispatch(addAllPomodoro())
           resetTimer();
           endTask();
         }
+        if(timeTick % 60 === 0 && timeTick > shortTick){
+          dispatch(addAllTime());
+        }
       }, 1000)
-    }else if(!isActive || isPause){
+    }else if(!isActive && !isPause){
       clearInterval(interval);
+      clearInterval(pauseInterval);
+    }else if(isActive && isPause){
+      pauseInterval = setInterval(()=>{
+        dispatch(addAllPause())
+      }, 60000)
     }
     return()=>{
       clearInterval(interval)
+      clearInterval(pauseInterval);
     }
   }, [isActive,isPause, timeTick])
 
   useEffect(()=>{
     resetTimer();
-    setPomodoro(1);
   }, [task.id, MainTime])
 
   const stop = () => {
@@ -82,12 +112,14 @@ export const InfoTask = ({task}:InfoTaskProps) => {
       playSound();
     }
     else if(isComplete) {
-      setPomodoro(prevState => prevState + 1)
+      dispatch(editPomodor(pomodoro + 1));
+      dispatch(addAllPomodoro())
       resetTimer();
       endTask();
     }
     else {
       resetTimer();
+      dispatch(addAllStop());
     }
   }
 

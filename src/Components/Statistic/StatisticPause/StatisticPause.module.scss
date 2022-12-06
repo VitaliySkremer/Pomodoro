@@ -2,12 +2,15 @@
 .pause {
   @include statistic_item;
   background-color: var(--pause-bg);
-  transition-property: opacity, transform;
-  transition-timing-function: ease;
-  transition-duration: .5s;
-  opacity: 0;
-  transform: translateY(500px);
-  &_active {
+  animation: animation .5s 1 ease;
+}
+
+@keyframes animation {
+  from{
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  to {
     opacity: 1;
     transform: none;
   }

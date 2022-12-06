@@ -2,17 +2,18 @@ import styles from './StatisticPomodoroCount.module.scss'
 import {Icons} from "../../UI/Icons/Icons";
 import {IconsList} from "../../UI/Icons/IconsList";
 import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../Store/initialState";
 
-export const StatisticPomodoroCount = () => {
-  const [count] = useState(3)
+interface IStatisticPomodoroCountProps {
+  countPomodoro: number
+}
 
-  const [isActive, setIsActive] = useState(false);
-  useEffect(()=>{
-    setIsActive(true)
-  })
+export const StatisticPomodoroCount = ({countPomodoro}:IStatisticPomodoroCountProps) => {
+
   return (
-    <div className={[styles.wrapper, isActive?styles.wrapper_active:''].join(' ')}>
-      {count===0
+    <div className={styles.wrapper}>
+      {countPomodoro===0
         ? <div className={styles.wrapper_empty}>
             <Icons icon={IconsList.TomatoIcon}/>
           </div>
@@ -20,11 +21,11 @@ export const StatisticPomodoroCount = () => {
             <div className={styles.wrapper_full_counter}>
               <Icons icon={IconsList.TomatoCountIcon}/>
               <span className={styles.wrapper_full_counter_text}>
-                x {count}
+                x {countPomodoro}
                 </span>
             </div>
             <p className={styles.wrapper_full_counter_bottom}>
-              {count} Помидора
+              {countPomodoro} Помидора
             </p>
           </div>
       }

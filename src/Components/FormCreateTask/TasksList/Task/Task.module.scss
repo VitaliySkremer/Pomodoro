@@ -4,8 +4,7 @@
   border-bottom: 1px solid var(--border-task);
   display: flex;
   align-items: center;
-  transform: translateX(-1000px);
-  transition: transform .2s ease;
+  animation: animations .5s 1 ease;
   &_pomodor {
     border-radius: 50%;
     width: 25px;
@@ -52,5 +51,16 @@
 
   &:not(:first-child){
     margin-top: -1px;
+  }
+}
+
+@keyframes animations {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to{
+    opacity: 1;
+    transform:none;
   }
 }

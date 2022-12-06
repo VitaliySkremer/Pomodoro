@@ -1,8 +1,7 @@
 .wrapper {
   background-color: var(--task-main-bg);
   grid-area: countPomodoro;
-  transition: opacity 1s ease;
-  opacity: 0;
+  animation: animation 1s 1 ease;
   &_empty {
     display: flex;
     flex-direction: column;
@@ -40,7 +39,13 @@
       color: white;
     }
   }
-  &_active {
+}
+
+@keyframes animation {
+  from{
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }

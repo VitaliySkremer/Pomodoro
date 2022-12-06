@@ -2,18 +2,19 @@ import styles from './Select.module.scss'
 import {Icons} from "../Icons/Icons";
 import {IconsList} from "../Icons/IconsList";
 import {useState} from "react";
+import {SelectList} from "../../../Store/initialState";
 
 interface ISelectProps {
-  choose: string,
-  list: Array<string>,
-  setIsChoose: (choose: string)=>void,
+  choose: SelectList,
+  list: Array<SelectList>,
+  setIsChoose: (choose: SelectList)=>void,
 }
 
 export const Select = ({choose, list, setIsChoose}:ISelectProps) => {
 
   const [isActive, setIsActive] = useState(false);
 
-  const chooseItem = (item: string) => (event:any) =>{
+  const chooseItem = (item: SelectList) => (event:any) =>{
     setIsChoose(item)
     setIsActive(false);
   }

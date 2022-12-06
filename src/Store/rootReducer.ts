@@ -4,12 +4,20 @@ import {ActionCreator, Reducer} from "redux";
 import {
   TypeAddMinute,
   TypeDeleteMinute,
+  TypeEditPomodor,
   TypeEditTask,
   TypeTaskAdd,
   TypeTaskAddPomodoro,
   TypeTaskDelete,
   TypeTaskDeletePomodoro
 } from "./Types/TypeTask";
+import {
+  TypeAddAllPause,
+  TypeAddAllPomodoro,
+  TypeAddAllStop,
+  TypeAddAllTime
+} from "./Types/TypeStatistic";
+import {statisticReducer} from "./statisticReducer";
 
 export const taskAdd: ActionCreator<TypeTaskAdd> = (task:ITask)=>({
   type: Actions.ADD_TASK,
@@ -38,8 +46,39 @@ export const editTask: ActionCreator<TypeEditTask> = (id:string,value: string)=>
   id,
   value
 })
+export const editPomodor: ActionCreator<TypeEditPomodor> = (count: number)=>({
+  type: Actions.EDIT_POMODOR,
+  count
+})
 
-type MyType = TypeTaskAdd | TypeTaskDelete | TypeTaskAddPomodoro | TypeTaskDeletePomodoro | TypeAddMinute | TypeDeleteMinute | TypeEditTask;
+export const addAllPomodoro: ActionCreator<TypeAddAllPomodoro> = () =>({
+  type: Actions.ADD_ALL_POMODORO
+})
+
+export const addAllTime: ActionCreator<TypeAddAllTime> = () =>({
+  type: Actions.ADD_ALL_TIME
+})
+
+export const addAllStop: ActionCreator<TypeAddAllStop> = () =>({
+  type: Actions.ADD_ALL_STOP
+})
+
+export const addAllPause: ActionCreator<TypeAddAllPause> = () =>({
+  type: Actions.ADD_ALL_PAUSE
+})
+
+type MyType = TypeTaskAdd
+  | TypeTaskDelete
+  | TypeTaskAddPomodoro
+  | TypeTaskDeletePomodoro
+  | TypeAddMinute
+  | TypeDeleteMinute
+  | TypeEditTask
+  | TypeEditPomodor
+  | TypeAddAllPomodoro
+  | TypeAddAllTime
+  | TypeAddAllStop
+  | TypeAddAllPause
 
 export const rootReducer:Reducer<RootState, MyType> = (state = initialState, action) =>{
   switch (action.type){
@@ -77,6 +116,19 @@ export const rootReducer:Reducer<RootState, MyType> = (state = initialState, act
       return {
         ...state,
         tasks: state.tasks.map(item=> item.id===action.id? {...item, name: action.value}:item)
+      }
+    case Actions.EDIT_POMODOR:
+      return {
+        ...state,
+        time: {...state.time, pomodor: action.count}
+      }
+    case Actions.ADD_ALL_TIME:
+    case Actions.ADD_ALL_POMODORO:
+    case Actions.ADD_ALL_STOP:
+    case Actions.ADD_ALL_PAUSE:
+      return {
+        ...state,
+        statistic: statisticReducer(state.statistic, action)
       }
     default: return state
   }

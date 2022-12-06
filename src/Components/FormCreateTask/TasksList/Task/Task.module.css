@@ -4,8 +4,7 @@
   border-bottom: 1px solid var(--border-task);
   display: flex;
   align-items: center;
-  transform: translateX(-1000px);
-  transition: transform 0.2s ease;
+  animation: animations 0.5s 1 ease;
 }
 .item_pomodor {
   border-radius: 50%;
@@ -48,6 +47,17 @@
 }
 .item:not(:first-child) {
   margin-top: -1px;
+}
+
+@keyframes animations {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /*# sourceMappingURL=Task.module.css.map */

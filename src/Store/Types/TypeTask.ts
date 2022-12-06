@@ -28,3 +28,8 @@ export type TypeEditTask = {
   id:string,
   value: string
 }
+
+export type TypeEditPomodor = {
+  type: typeof Actions.EDIT_POMODOR,
+  count: number
+}
