@@ -11,13 +11,7 @@ import {
   TypeTaskDelete,
   TypeTaskDeletePomodoro
 } from "./Types/TypeTask";
-import {
-  TypeAddAllPause,
-  TypeAddAllPomodoro,
-  TypeAddAllStop,
-  TypeAddAllTime
-} from "./Types/TypeStatistic";
-import {statisticReducer} from "./statisticReducer";
+
 
 export const taskAdd: ActionCreator<TypeTaskAdd> = (task:ITask)=>({
   type: Actions.ADD_TASK,
@@ -51,22 +45,6 @@ export const editPomodor: ActionCreator<TypeEditPomodor> = (count: number)=>({
   count
 })
 
-export const addAllPomodoro: ActionCreator<TypeAddAllPomodoro> = () =>({
-  type: Actions.ADD_ALL_POMODORO
-})
-
-export const addAllTime: ActionCreator<TypeAddAllTime> = () =>({
-  type: Actions.ADD_ALL_TIME
-})
-
-export const addAllStop: ActionCreator<TypeAddAllStop> = () =>({
-  type: Actions.ADD_ALL_STOP
-})
-
-export const addAllPause: ActionCreator<TypeAddAllPause> = () =>({
-  type: Actions.ADD_ALL_PAUSE
-})
-
 type MyType = TypeTaskAdd
   | TypeTaskDelete
   | TypeTaskAddPomodoro
@@ -75,60 +53,57 @@ type MyType = TypeTaskAdd
   | TypeDeleteMinute
   | TypeEditTask
   | TypeEditPomodor
-  | TypeAddAllPomodoro
-  | TypeAddAllTime
-  | TypeAddAllStop
-  | TypeAddAllPause
 
 export const rootReducer:Reducer<RootState, MyType> = (state = initialState, action) =>{
+
   switch (action.type){
     case Actions.ADD_TASK:
+      localStorage.tasks = JSON.stringify([...state.tasks, action.task]);
       return {
         ...state,
         tasks: [...state.tasks, action.task]
       }
     case Actions.DELETE_TASK :
+      localStorage.tasks = JSON.stringify(state.tasks.filter(item=> item.id !== action.id));
       return {
         ...state,
         tasks: state.tasks.filter(item=> item.id !== action.id)
       }
     case Actions.ADD_POMODORO :
+      localStorage.tasks = JSON.stringify(state.tasks.map(item=> item.id === action.id ? {...item, countPomodoro: item.countPomodoro + 1} : item));
       return {
         ...state,
         tasks: state.tasks.map(item=> item.id === action.id ? {...item, countPomodoro: item.countPomodoro + 1} : item)
       }
     case Actions.DELETE_POMODORO:
+      localStorage.tasks = JSON.stringify(state.tasks.map(item=> item.id === action.id ? {...item, countPomodoro: item.countPomodoro - 1} : item));
       return {
         ...state,
         tasks: state.tasks.map(item=> item.id === action.id ? {...item, countPomodoro: item.countPomodoro - 1} : item)
       }
     case Actions.ADD_MINUTE :
+      localStorage.timeTick = JSON.stringify(state.time.timeTick + 60);
       return {
         ...state,
         time: {...state.time, timeTick: state.time.timeTick + 60}
       }
     case Actions.DELETE_MINUTE :
+      localStorage.timeTick = JSON.stringify(state.time.timeTick - 60);
       return {
         ...state,
         time: {...state.time, timeTick: state.time.timeTick - 60}
       }
     case Actions.EDIT_TASK :
+      localStorage.tasks = JSON.stringify(state.tasks.map(item=> item.id===action.id? {...item, name: action.value}:item));
       return {
         ...state,
         tasks: state.tasks.map(item=> item.id===action.id? {...item, name: action.value}:item)
       }
     case Actions.EDIT_POMODOR:
+      localStorage.editLocalPomodor = JSON.stringify(action.count);
       return {
         ...state,
         time: {...state.time, pomodor: action.count}
-      }
-    case Actions.ADD_ALL_TIME:
-    case Actions.ADD_ALL_POMODORO:
-    case Actions.ADD_ALL_STOP:
-    case Actions.ADD_ALL_PAUSE:
-      return {
-        ...state,
-        statistic: statisticReducer(state.statistic, action)
       }
     default: return state
   }

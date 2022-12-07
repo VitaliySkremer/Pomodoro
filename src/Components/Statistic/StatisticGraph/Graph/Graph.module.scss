@@ -1,3 +1,8 @@
+.graph {
+  transition: height 1s ease;
+  background-color: #999999;
+}
+
 .label {
   cursor: pointer;
   height: 100%;
@@ -5,7 +10,6 @@
   justify-content: flex-end;
   flex-direction: column;
   position: relative;
-
 
   &_text {
     position: absolute;
@@ -30,13 +34,8 @@
     color: var(--pomodoro-red);
   }
   input[type='radio']:checked + .graph {
-    transition: background-color .2s ease;
     background-color: var(--pomodoro-red);
   }
-}
-.graph {
-  transition: height 1s ease;
-  background-color: #999999;
 }
 
 .graph:hover {

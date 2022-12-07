@@ -15,8 +15,11 @@ export enum SelectList {
 }
 
 export const weekDay = [DayWeek.Sunday, DayWeek.Monday,DayWeek.Tuesday, DayWeek.Wednesday, DayWeek.Thursday, DayWeek.Friday ,DayWeek.Saturday];
-
 export const Select:Array<SelectList> = [SelectList.now, SelectList.last, SelectList.TwoAgo]
+
+const taskStorage:ITask[] = localStorage.getItem('tasks')? [...JSON.parse(localStorage.tasks)] : []
+const totalTimeTaskStorage:number = localStorage.getItem('timeTick')? JSON.parse(localStorage.timeTick): 1500
+const editLocalPomodor:number = localStorage.getItem('editLocalPomodor')? JSON.parse(localStorage.editLocalPomodor): 1
 
 export interface ITask {
   id: string;
@@ -31,35 +34,19 @@ export interface ITaskTime {
   pomodor: number
 }
 
-export interface IStatistic {
-    timer: number;
-    countPomodoro: number;
-    focus: number;
-    timePause: number;
-    stopCount: number
-}
-
 export type RootState = {
   tasks: ITask[];
   time: ITaskTime;
-  statistic: IStatistic;
   day: DayWeek
 }
 
 export const initialState: RootState = {
-  tasks:[],
+  tasks:taskStorage,
   time: {
-    timeTick: 1500, //1500
+    timeTick: totalTimeTaskStorage,
     timeLongPause: 1200,
     timeShortPause: 300,
-    pomodor: 1,
-  },
-  statistic: {
-      timer: 0,
-      countPomodoro: 0,
-      focus: 0,
-      timePause: 0,
-      stopCount: 0,
+    pomodor: editLocalPomodor,
   },
   day: weekDay[new Date().getDay()]
 }

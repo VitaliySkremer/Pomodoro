@@ -5,9 +5,16 @@ import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../Store/initialState";
 
-export const StatisticFocus = () => {
-  const focus = useSelector<RootState, number>(state => Math.round(state.statistic.timer / (state.statistic.timer + state.statistic.timePause) * 100))
+interface IStatisticFocusProps {
+  timer: number,
+  timePause: number
+}
 
+export const StatisticFocus = ({timer, timePause}:IStatisticFocusProps) => {
+  const [focus, setFocus] = useState( 0)
+  useEffect(()=>{
+    setFocus(Math.round(timer / (timer + timePause) * 100))
+  }, [timer, timePause])
   return (
     <div className={styles.focus}>
       <div className={styles.focus_block}>

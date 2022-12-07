@@ -1,7 +1,7 @@
 import styles from './StatisticGraph.module.scss'
 import {Graph} from "./Graph/Graph";
 import {DayWeek} from '../../../Store/initialState';
-import {ILocalStorage} from "../../../Store/statisticReducer";
+import { ILocalStorage } from '../../FormTask/InfoTask/InfoTask';
 
 
 const timeLine = ['1 ч 40мин','1 ч 15 мин', '50 мин', '25 мин'];

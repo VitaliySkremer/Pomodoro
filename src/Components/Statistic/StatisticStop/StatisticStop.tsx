@@ -5,13 +5,17 @@ import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../Store/initialState";
 
-export const StatisticStop = () => {
-  const stop = useSelector<RootState, number>(state => state.statistic.stopCount)
+interface IStatisticStopProps {
+  stopCount: number
+}
+
+export const StatisticStop = ({stopCount}: IStatisticStopProps) => {
+
   return (
     <div className={styles.stop}>
       <div className={styles.stop_block}>
         <span className={styles.stop_block_text}>Остановки</span>
-        <span className={styles.stop_block_number}>{stop}</span>
+        <span className={styles.stop_block_number}>{stopCount}</span>
       </div>
       <Icons icon={IconsList.StopIcon}/>
     </div>

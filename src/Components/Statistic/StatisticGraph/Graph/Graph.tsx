@@ -1,7 +1,7 @@
 import styles from './Graph.module.scss'
 import {useEffect, useState} from "react";
 import { DayWeek } from '../../../../Store/initialState';
-import {ILocalStorage} from "../../../../Store/statisticReducer";
+import { ILocalStorage } from '../../../FormTask/InfoTask/InfoTask';
 
 interface IGraphProps {
   time: ILocalStorage;

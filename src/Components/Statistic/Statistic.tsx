@@ -1,15 +1,16 @@
 import styles from './Statistic.module.scss'
 import {StatisticSelect} from "./StatisticSelect/StatisticSelect";
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useState} from "react";
 import {StatisticByDay} from "./StatisticByDay/StatisticByDay";
 import {StatisticPomodoroCount} from "./StatisticPomodoroCount/StatisticPomodoroCount";
 import {StatisticFocus} from "./StatisticFocuse/StatisticFocus";
 import {StatisticPause} from "./StatisticPause/StatisticPause";
 import {StatisticStop} from "./StatisticStop/StatisticStop";
 import {StatisticGraph} from "./StatisticGraph/StatisticGraph";
-import {ILocalStorage} from "../../Store/statisticReducer";
+
 import {DayWeek, RootState, Select, SelectList} from "../../Store/initialState";
 import {useSelector} from "react-redux";
+import {ILocalStorage} from '../FormTask/InfoTask/InfoTask';
 
 function getArrTimeDay (isChoose:SelectList) {
   let Week:ILocalStorage[] = [
@@ -33,8 +34,6 @@ function getArrTimeDay (isChoose:SelectList) {
       if(findItem) return findItem
       return item;
     })
-    console.log(Week)
-    return Week;
   }
   return Week
 }
@@ -59,14 +58,14 @@ export const Statistic = () => {
       <StatisticSelect choose={isChoose} setIsChoose={setIsChoose} list={selectList}/>
       <div className={styles.statistic__wrapper}>
         <div className={styles.statistic__main}>
-            <StatisticByDay time={selectDay?.timer || 0}/>
+            <StatisticByDay time={selectDay?.timer || 0} day={selectDay?.day || DayWeek.Monday}/>
             <StatisticPomodoroCount countPomodoro={selectDay?.countPomodoro || 0}/>
             <StatisticGraph day={day} radio={radio} setRadio={setRadio} statisticDays={arrTimeDay}/>
         </div>
         <div className={styles.statistic__bottom}>
-          <StatisticFocus/>
-          <StatisticPause/>
-          <StatisticStop/>
+          <StatisticFocus timer={selectDay?.timer || 0} timePause={selectDay?.timePause || 0}/>
+          <StatisticPause timePause={selectDay?.timePause || 0}/>
+          <StatisticStop stopCount={selectDay?.stopCount || 0}/>
         </div>
       </div>
     </div>

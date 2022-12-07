@@ -2,7 +2,7 @@ import {Button} from "../../UI/Button/Button";
 import {Input} from "../../UI/Input/Input";
 import styles from './FormAddTask.module.scss'
 import {FormEvent, useState} from "react";
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
 import {ITask} from "../../../Store/initialState";
 import {TasksList} from "../TasksList/TasksList";
 import {taskAdd} from "../../../Store/rootReducer";
