@@ -54,3 +54,43 @@
     left: 75px;
   }
 }
+
+@media all and (max-width: 650px){
+  .timer {
+    font-size: 90px;
+  }
+}
+
+@media all and (max-width: 500px){
+  .timer {
+    font-size: 60px;
+  }
+
+  .timer__wrapper {
+    &_add {
+      right: 50px;
+    }
+
+    &_minus {
+
+      left: 50px;
+    }
+  }
+}
+
+@media all and (max-width: 400px){
+  .timer {
+    font-size: 30px;
+  }
+
+  .timer__wrapper {
+    &_add {
+      right: 50px;
+    }
+
+    &_minus {
+
+      left: 50px;
+    }
+  }
+}

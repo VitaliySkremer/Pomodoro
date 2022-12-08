@@ -10,3 +10,11 @@
     font-size: 24px;
   }
 }
+
+@media all and (max-width: 620px){
+  .select__container {
+    &_title {
+      display: none;
+    }
+  }
+}

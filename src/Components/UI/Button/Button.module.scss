@@ -34,3 +34,16 @@
     border: 2px solid var(--btn-disabled);
   }
 }
+
+
+@media all and (max-width: 610px){
+  .button__light {
+    padding: 10px 25px;
+  }
+  .button__red {
+    padding: 8px 25px;
+  }
+  .button:disabled {
+    padding: 8px 25px;
+  }
+}

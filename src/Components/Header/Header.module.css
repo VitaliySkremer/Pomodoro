@@ -74,4 +74,20 @@
   fill: var(--statistic-hover);
 }
 
+@media all and (max-width: 620px) {
+  .logo__block_pomodoro {
+    display: none;
+  }
+  .logo__block_text {
+    font-size: 16px;
+  }
+  .statistic {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .statistic svg {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=Header.module.css.map */

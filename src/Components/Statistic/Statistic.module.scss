@@ -25,3 +25,24 @@
   gap: 32px;
   grid-template-columns: repeat(3, 1fr);
 }
+
+@media all and (max-width: 1050px){
+  .statistic__main {
+    grid-template-rows: 471px 180px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+          "statisticGraph statisticGraph statisticGraph statisticGraph"
+          "byDay byDay countPomodoro countPomodoro";
+  }
+
+  .statistic__wrapper {
+    grid-template-rows: 1fr 179px;
+  }
+}
+
+@media all and (max-width: 950px){
+  .container {
+    padding: 40px 0;
+    overflow-x: auto;
+  }
+}

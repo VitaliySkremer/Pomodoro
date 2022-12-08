@@ -40,9 +40,8 @@ export const editTask: ActionCreator<TypeEditTask> = (id:string,value: string)=>
   id,
   value
 })
-export const editPomodor: ActionCreator<TypeEditPomodor> = (count: number)=>({
+export const editPomodor: ActionCreator<TypeEditPomodor> = ()=>({
   type: Actions.EDIT_POMODOR,
-  count
 })
 
 type MyType = TypeTaskAdd
@@ -100,10 +99,10 @@ export const rootReducer:Reducer<RootState, MyType> = (state = initialState, act
         tasks: state.tasks.map(item=> item.id===action.id? {...item, name: action.value}:item)
       }
     case Actions.EDIT_POMODOR:
-      localStorage.editLocalPomodor = JSON.stringify(action.count);
+      localStorage.tasks = JSON.stringify(state.tasks.map((item, index)=>index===0? {...item, focusPomodoro: item.focusPomodoro + 1}:item));
       return {
         ...state,
-        time: {...state.time, pomodor: action.count}
+        tasks: state.tasks.map((item, index)=>index===0? {...item, focusPomodoro: item.focusPomodoro + 1}:item)
       }
     default: return state
   }

@@ -19,25 +19,23 @@ export const Select:Array<SelectList> = [SelectList.now, SelectList.last, Select
 
 const taskStorage:ITask[] = localStorage.getItem('tasks')? [...JSON.parse(localStorage.tasks)] : []
 const totalTimeTaskStorage:number = localStorage.getItem('timeTick')? JSON.parse(localStorage.timeTick): 1500
-const editLocalPomodor:number = localStorage.getItem('editLocalPomodor')? JSON.parse(localStorage.editLocalPomodor): 1
 
 export interface ITask {
   id: string;
   name: string;
   countPomodoro: number;
+  focusPomodoro: number;
 }
 
 export interface ITaskTime {
   timeTick: number;
   timeShortPause: number;
   timeLongPause: number;
-  pomodor: number
 }
 
 export type RootState = {
   tasks: ITask[];
   time: ITaskTime;
-  day: DayWeek
 }
 
 export const initialState: RootState = {
@@ -46,7 +44,5 @@ export const initialState: RootState = {
     timeTick: totalTimeTaskStorage,
     timeLongPause: 1200,
     timeShortPause: 300,
-    pomodor: editLocalPomodor,
   },
-  day: weekDay[new Date().getDay()]
 }

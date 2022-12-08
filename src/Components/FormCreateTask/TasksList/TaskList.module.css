@@ -7,4 +7,10 @@
   margin: 0 0 19px;
 }
 
+@media all and (max-width: 1210px) {
+  .task__list {
+    max-width: 80%;
+  }
+}
+
 /*# sourceMappingURL=TaskList.module.css.map */

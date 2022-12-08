@@ -31,5 +31,4 @@ export type TypeEditTask = {
 
 export type TypeEditPomodor = {
   type: typeof Actions.EDIT_POMODOR,
-  count: number
 }

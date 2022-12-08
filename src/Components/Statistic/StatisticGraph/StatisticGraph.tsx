@@ -1,20 +1,18 @@
 import styles from './StatisticGraph.module.scss'
 import {Graph} from "./Graph/Graph";
 import {DayWeek} from '../../../Store/initialState';
-import { ILocalStorage } from '../../FormTask/InfoTask/InfoTask';
-
+import { IStatistic } from '../../../Hooks/useStatistic';
 
 const timeLine = ['1 ч 40мин','1 ч 15 мин', '50 мин', '25 мин'];
 
 
 interface IStatisticGraph {
-  statisticDays: ILocalStorage[]
-  day: DayWeek,
+  statisticDays: IStatistic[]
   radio: DayWeek,
   setRadio: (radio:DayWeek)=>void
 }
 
-export const StatisticGraph = ({statisticDays,day,radio,setRadio}:IStatisticGraph) => {
+export const StatisticGraph = ({statisticDays,radio,setRadio}:IStatisticGraph) => {
 
   return (
     <div className={styles.wrapper}>
@@ -28,9 +26,9 @@ export const StatisticGraph = ({statisticDays,day,radio,setRadio}:IStatisticGrap
           )}
         </ul>
         <div className={styles.graph}>
-          {statisticDays.map((item, index)=>
+          {statisticDays.map(item=>
             <Graph
-              key={index}
+              key={item.day}
               time={item}
               setRadio={setRadio}
               radio={radio}

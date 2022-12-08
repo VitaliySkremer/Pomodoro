@@ -25,4 +25,20 @@
       line-height: 76px;
     }
   }
+
+  @media all and (max-width: 950px){
+      &_block {
+        &_text {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 25px;
+        }
+
+        &_number {
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 36px;
+        }
+      }
+    }
 }

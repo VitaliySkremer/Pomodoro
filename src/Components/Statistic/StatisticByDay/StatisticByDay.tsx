@@ -1,11 +1,9 @@
 import styles from './StaitsticByDay.module.scss'
-import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
-import {DayWeek, RootState} from "../../../Store/initialState";
+import {DayWeek} from "../../../Store/initialState";
 
 interface IStatisticByDayProps {
   time: number;
-  day: DayWeek
+  day: string
 }
 
 export const StatisticByDay = ({time,day}:IStatisticByDayProps) => {

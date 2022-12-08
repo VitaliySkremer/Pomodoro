@@ -96,4 +96,15 @@ body {
   justify-content: space-between;
 }
 
+@media all and (max-width: 1300px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media all and (max-width: 1300px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
 /*# sourceMappingURL=App.css.map */

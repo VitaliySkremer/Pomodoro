@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import styles from './Main.module.scss'
 import {FormCreateTask} from "../FormCreateTask/FormCreateTask";
 import {FormTask} from "../FormTask/FormTask";

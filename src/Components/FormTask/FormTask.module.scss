@@ -7,8 +7,34 @@
   justify-content: center;
   background-color: var(--task-main-bg);
   height: 507px;
+
+  animation: animation .8s 1 ease;
 }
 
 .not_task {
   align-self: center;
+}
+
+@keyframes animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media all and (max-width: 1210px){
+  .wrapper {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+@media all and (max-width: 610px){
+  .wrapper {
+    max-width: 100%;
+    margin-bottom: 25px;
+    height: 400px;
+  }
 }

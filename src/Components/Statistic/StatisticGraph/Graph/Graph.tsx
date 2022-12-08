@@ -1,10 +1,10 @@
 import styles from './Graph.module.scss'
 import {useEffect, useState} from "react";
 import { DayWeek } from '../../../../Store/initialState';
-import { ILocalStorage } from '../../../FormTask/InfoTask/InfoTask';
+import { IStatistic } from '../../../../Hooks/useStatistic';
 
 interface IGraphProps {
-  time: ILocalStorage;
+  time: IStatistic;
   radio: DayWeek;
   setRadio:(radio:DayWeek)=>void;
 }

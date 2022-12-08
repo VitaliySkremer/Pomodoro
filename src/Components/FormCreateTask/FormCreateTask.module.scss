@@ -2,3 +2,11 @@
   max-width: 508px;
   margin-right: 16px;
 }
+
+@media all and (max-width: 1210px){
+  .wrapper {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
