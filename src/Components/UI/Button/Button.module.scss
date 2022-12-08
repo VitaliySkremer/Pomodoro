@@ -33,6 +33,10 @@
     color: var(--btn-disabled);
     border: 2px solid var(--btn-disabled);
   }
+
+  &:focus {
+    outline: 1px solid var(--pomodoro-red);
+  }
 }
 
 

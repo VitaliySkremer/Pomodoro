@@ -9,6 +9,10 @@
     font-size: 16px;
     line-height: 17px;
     color: var(--main-color);
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -29,12 +33,21 @@
 }
 
 .info{
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 17px;
   margin-bottom: 32px;
   &_task_number {
     color: var(--timer-heade-bg);
+  }
+  &_text {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    text-align: center;
   }
 }
 
@@ -74,6 +87,19 @@
     &_minus {
 
       left: 50px;
+    }
+  }
+
+  .header {
+    &_text {
+      max-width: 120px;
+    }
+  }
+
+  .info{
+    &_text {
+      max-width: 200px;
+      white-space: nowrap;
     }
   }
 }

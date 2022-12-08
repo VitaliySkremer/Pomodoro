@@ -17,6 +17,9 @@
     cursor: default;
     opacity: .5;
   }
+  &:focus {
+    outline: 1px solid var(--pomodoro-red);
+  }
 }
 
 

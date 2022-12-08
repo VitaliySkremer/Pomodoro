@@ -10,5 +10,8 @@
 .input::placeholder {
   color: var(--input-placeholder);
 }
+.input:focus {
+  outline: 1px solid var(--pomodoro-red);
+}
 
 /*# sourceMappingURL=Input.module.css.map */

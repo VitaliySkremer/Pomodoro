@@ -36,6 +36,10 @@
   &:hover &_text::after {
     width: 100%;
   }
+
+  &:focus &_text::after {
+    width: 100%;
+  }
 }
 
 .right__block {
@@ -76,6 +80,10 @@
   &:hover svg path {
     transition: fill .2s ease;
     fill: var(--statistic-hover);
+  }
+
+  &:focus &_text::after {
+    width: 100%;
   }
 }
 

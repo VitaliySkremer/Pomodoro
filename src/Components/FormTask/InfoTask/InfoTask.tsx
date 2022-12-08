@@ -33,7 +33,7 @@ export const InfoTask = ({task}:InfoTaskProps) => {
   return (
     <>
       <div className={styles.header} style={isActive && !isComplete? {backgroundColor:'var(--pomodoro-red)'}: isComplete?{backgroundColor:'var(--btn-bg)'} :{backgroundColor:'var(--task-header-bg)'}}>
-        <span>{task.name}</span>
+        <span className={styles.header_text}>{task.name}</span>
         <span>Помидор {pomodoroActive}</span>
       </div>
       <div className={styles.info__wrapper}>
@@ -56,7 +56,7 @@ export const InfoTask = ({task}:InfoTaskProps) => {
         </div>
         <div className={styles.info}>
           <span className={styles.info_task_number}>Задача - </span>
-          <span>{task.name}</span>
+          <span className={styles.info_text}>&nbsp;{task.name}</span>
         </div>
         <div>
           <Button onClick={()=>{togglePause(); setIsActive(true)}} mr='25px'>

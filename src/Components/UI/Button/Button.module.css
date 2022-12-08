@@ -34,6 +34,9 @@
   color: var(--btn-disabled);
   border: 2px solid var(--btn-disabled);
 }
+.button:focus {
+  outline: 1px solid var(--pomodoro-red);
+}
 
 @media all and (max-width: 610px) {
   .button__light {
